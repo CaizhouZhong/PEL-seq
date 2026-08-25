@@ -32,7 +32,7 @@ PEL_seq_long <- melt(PEL_seq_count, id.vars = "sample")
 PEL_seq_percent <- PEL_seq_long %>%
   group_by(sample) %>%
   mutate(percent = value / sum(value) * 100)
-PEL_seq_percent$sample <- factor(PEL_seq_percent$sample,levels = c("H1975-1","H1975-2","PC9-1","PC9-2","HCC827-1","HCC827-2"))
+PEL_seq_percent$sample <- factor(PEL_seq_percent$sample,levels = c("H1975_r1","H1975_r2","PC9_r1","PC9_r2","HCC827_r1","HCC827_r2"))
 
 ggplot(PEL_seq_percent, aes(x = sample, y = percent, fill = variable)) +
   geom_bar(stat = "identity",width = 0.7) +
